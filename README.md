@@ -1,4 +1,6 @@
-## About This Project ![Project Status](https://img.shields.io/badge/status-on--going-brightgreen)
+
+
+# About This Project ![Project Status](https://img.shields.io/badge/status-on--going-brightgreen)
 This is an ongoing project built with Laravel 9. The goal of this project is to create a modern and responsive portfolio website using Bootstrap 5 and Laravel. The website will showcase projects, skills, and experiences in a professional manner, providing an elegant online presence for individuals.
 
 
