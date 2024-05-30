@@ -1,7 +1,5 @@
-
-
-## This is an on-going project built with Laravel 9.![Project Status](https://img.shields.io/badge/status-on--going-brightgreen)
-
+## About This Project ![Project Status](https://img.shields.io/badge/status-on--going-brightgreen)
+This is an ongoing project built with Laravel 9. The goal of this project is to create a modern and responsive portfolio website using Bootstrap 5 and Laravel. The website will showcase projects, skills, and experiences in a professional manner, providing an elegant online presence for individuals.
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
@@ -12,6 +10,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+
 
 ## About Laravel
 
