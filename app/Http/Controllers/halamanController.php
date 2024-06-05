@@ -16,7 +16,10 @@ class halamanController extends Controller
     public function index()
     {
         $data = halaman::orderBy('judul', 'asc')->get();
-        return view('dashboard.halaman.index')->with('data', $data);
+    $title = 'Delete Item!';
+    $text = 'Are you sure you want to delete this item?';
+
+    return view('dashboard.halaman.index', compact('data', 'title', 'text'));
     }
 
     /**

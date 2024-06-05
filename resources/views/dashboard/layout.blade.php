@@ -27,7 +27,13 @@
   <link href="{{ asset('admin') }}/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="{{ asset('admin') }}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="{{ asset('admin') }}/assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
+  <!-- for tokenfield -->
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.css"
+    integrity="sha512-wcf2ifw+8xI4FktrSorGwO7lgRzGx1ld97ySj1pFADZzFdcXTIgQhHMTo7tQIADeYdRRnAjUnF00Q5WTNmL3+A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Template Main CSS File -->
   <link href="{{ asset('admin') }}/assets/css/style.css" rel="stylesheet">
 
@@ -85,7 +91,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.index') }}">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -93,7 +99,12 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-
+            <li>
+                <a class="dropdown-item d-flex align-items-center" href="{{ route('contact.index') }}">
+                  <i class="bi bi-person"></i>
+                  <span>Email</span>
+                </a>
+              </li>
 
             <li>
               <hr class="dropdown-divider">
@@ -120,136 +131,64 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link {{ Route::is('dashboard') ? 'active' : 'collapsed' }}" href="{{ route('dashboard')}}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link {{ Route::is('halaman.index') ? 'active' : 'collapsed' }}" href="{{ route('halaman.index') }}">
+            <i class="bi bi-folder"></i>
+            <span>Halaman</span>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-
-        </ul>
-      </li><!-- End Components Nav -->
-
+      </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link {{ Route::is('experience.index') ? 'active' : 'collapsed' }}" href="{{ route('experience.index') }}">
+            <i class="bi bi-briefcase "></i>
+            <span>Experience</span>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
-
+      </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link {{ Route::is('education.index') ? 'active' : 'collapsed' }}" href="{{ route('education.index') }}">
+            <i class="bi bi-mortarboard "></i>
+            <span>Education</span>
         </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
+      </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link {{ Route::is('skill.index') ? 'active' : 'collapsed' }}" href="{{ route('skill.index') }}">
+            <i class="bi bi-wrench "></i>
+            <span>Skill</span>
         </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
+      </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link {{ Route::is('project.index') ? 'active' : 'collapsed' }}" href="{{ route('project.index') }}">
+            <i class="bi bi-braces "></i>
+            <span>Project</span>
         </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
+      </li>
 
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link {{ Route::is('profile.index') ? 'active' : 'collapsed' }}" href="{{ route('profile.index') }}">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
-      </li><!-- End Profile Page Nav -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Route::is('setting.index') ? 'active' : 'collapsed' }}" href="{{ route('setting.index') }}">
+          <i class="bi bi-gear"></i>
+          <span>Setting</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Route::is('category.index') ? 'active' : 'collapsed' }}" href="{{ route('category.index') }}">
+            <i class="bi bi-clipboard2-check"></i>
+            <span>Category</span>
+        </a>
+      </li>
+      <!-- End Profile Page Nav -->
 
      <!-- End F.A.Q Page Nav -->
 
@@ -277,11 +216,16 @@
   <script src="{{ asset('admin') }}/assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="{{ asset('admin') }}/assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="{{ asset('admin') }}/assets/vendor/php-email-form/validate.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- Template Main JS File -->
   <script src="{{ asset('admin') }}/assets/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js"></script>
+  <!-- token field -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+    @stack('scriptskill')
+    @stack('scriptregion')
   <script>
    $(document).ready(function() {
   $('.summernote').summernote({
