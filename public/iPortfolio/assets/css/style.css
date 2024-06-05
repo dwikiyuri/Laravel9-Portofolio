@@ -999,7 +999,7 @@ section {
 .contact .php-email-form .sent-message {
     display: none;
     color: #fff;
-    background: #18d26e;
+    background: #173b6c;
     text-align: center;
     padding: 15px;
     font-weight: 600;
@@ -1020,7 +1020,7 @@ section {
     width: 24px;
     height: 24px;
     margin: 0 10px -6px 0;
-    border: 3px solid #18d26e;
+    border: 3px solid #173b6c;
     border-top-color: #eee;
     animation: animate-loading 1s linear infinite;
 }
